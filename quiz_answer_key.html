@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher's Answer Key – Grade 3 Zakat Online Challenge (20 Marks)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-emerald: #0b663b;
+      --primary-dark: #074326;
+      --accent-gold: #c59b27;
+      --navy: #152d4a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      padding: 0 0 32px 0;
+    }
+
+    .no-print-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: linear-gradient(135deg, #074326, #152d4a);
+      color: white;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      margin-bottom: 24px;
+    }
+
+    .toolbar-title {
+      font-weight: 700;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .toolbar-title span {
+      background: var(--accent-gold);
+      color: #000;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      border: none;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #e5b93b, #c59b27);
+      color: #112316;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .btn-outline {
+      background: rgba(255,255,255,0.12);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.22);
+    }
+
+    .key-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 36px 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      border: 1px solid #e2e8f0;
+    }
+
+    .header {
+      border-bottom: 2px solid var(--accent-gold);
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .bismillah {
+      font-family: 'Amiri', serif;
+      font-size: 18px;
+      color: var(--primary-emerald);
+      margin-bottom: 4px;
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .total-badge {
+      background: var(--primary-dark);
+      color: #ffde70;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-align: center;
+      border: 1.5px solid var(--accent-gold);
+    }
+
+    .total-badge .score {
+      font-family: 'Cinzel', serif;
+      font-size: 22px;
+      font-weight: 800;
+      display: block;
+      line-height: 1;
+    }
+
+    .total-badge .lbl {
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #e2e8f0;
+      letter-spacing: 1px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary-emerald);
+      margin: 22px 0 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid #e2e8f0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      margin-bottom: 14px;
+    }
+
+    th {
+      background: #f1f5f9;
+      color: var(--navy);
+      padding: 9px 12px;
+      text-align: left;
+      font-weight: 700;
+      border: 1px solid #cbd5e1;
+    }
+
+    td {
+      padding: 9px 12px;
+      border: 1px solid #e2e8f0;
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td {
+      background: #fbfcfe;
+    }
+
+    .ans-badge {
+      font-weight: 700;
+      color: #0b663b;
+      background: #eafaf1;
+      padding: 2px 7px;
+      border-radius: 4px;
+      display: inline-block;
+      border: 1px solid #b7ebd0;
+    }
+
+    .source-quote {
+      font-style: italic;
+      color: #475569;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+      .no-print-toolbar {
+        display: none !important;
+      }
+      .key-container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print-toolbar">
+    <div class="toolbar-title">
+      <span>Teacher Guide</span> Online Quiz Answer Key (20 Marks)
+    </div>
+    <div style="display: flex; gap: 10px;">
+      <a class="btn btn-outline" href="quiz.html">
+        🎮 Launch Quiz
+      </a>
+      <a class="btn btn-outline" href="index.html">
+        📄 Worksheet Home
+      </a>
+      <button class="btn btn-gold" onclick="window.print()">
+        🖨️ Print Key
+      </button>
+    </div>
+  </div>
+
+  <div class="key-container">
+    <div class="header">
+      <div>
+        <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+        <h1>Grade 3 Zakat Quiz Answer Key</h1>
+        <div class="subtitle">Chapter 5: Zakah – The Purifying Dues (الزَّكَاة) • Pages 21–22</div>
+      </div>
+      <div class="total-badge">
+        <span class="score">20 / 20</span>
+        <span class="lbl">Total Marks</span>
+      </div>
+    </div>
+
+    <!-- Section A -->
+    <div class="section-title">
+      <span>SECTION A: Underline & Select the Correct Answer (5 Questions × 1 Mark = 5 Marks)</span>
+      <span style="font-size: 12px; color: #64748b;">5 Marks</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 45px;">Q#</th>
+          <th style="width: 220px;">Correct Answer</th>
+          <th>Textbook Reference & Verified Sentence</th>
+          <th style="width: 70px; text-align: center;">Mark</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1</strong></td>
+          <td><span class="ans-badge">third</span></td>
+          <td><span class="source-quote">"Zakah is the third pillar of Islam." (Page 21)</span></td>
+          <td style="text-align: center; font-weight: 700;">1 Mark</td>
+        </tr>
+        <tr>
+          <td><strong>2</strong></td>
+          <td><span class="ans-badge">Prayer (Salah)</span></td>
+          <td><span class="source-quote">"The Qur'an mentions it immediately after the prayer..." (Page 21)</span></td>
+          <td style="text-align: center; font-weight: 700;">1 Mark</td>
+        </tr>
+        <tr>
+          <td><strong>3</strong></td>
+          <td><span class="ans-badge">Arabic</span></td>
+          <td><span class="source-quote">"Zakah is an Arabic word." (Page 21)</span></td>
+          <td style="text-align: center; font-weight: 700;">1 Mark</td>
+        </tr>
+        <tr>
+          <td><strong>4</strong></td>
+          <td><span class="ans-badge">Possesses a certain amount of wealth</span></td>
+          <td><span class="source-quote">"...must be paid by every Muslim who possesses a certain amount of wealth." (Page 21)</span></td>
+          <td style="text-align: center; font-weight: 700;">1 Mark</td>
+        </tr>
+        <tr>
+          <td><strong>5</strong></td>
+          <td><span class="ans-badge">Poor or in need</span></td>
+          <td><span class="source-quote">"...and is for the benefit of those who are poor or in need." (Page 21)</span></td>
+          <td style="text-align: center; font-weight: 700;">1 Mark</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Section B -->
+    <div class="section-title">
+      <span>SECTION B: Choose the Correct Answer (5 Questions × 1 Mark = 5 Marks)</span>
+      <span style="font-size: 12px; color: #64748b;">5 Marks</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 45px;">Q#</th>
+          <th style="width: 220px;">Correct Answer</th>
+          <th>Textbook Reference & Verified Sentence</th>
+          <th style="width: 70px; text-align: center;">Mark</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>6</strong></td>
+          <td><span class="ans-badge">Purification and growth</span></td>
+          <td><span class="source-quote">"The root meaning of the Arabic term suggests that it is a means of purification and growth." (Page 21)</span></td>
+          <td style="text-align: center; font-weight: 700;">1 Mark</td>
+        </tr>
+        <tr>
+          <td><strong>7</strong></td>
+          <td><span class="ans-badge">The Purifying Dues</span></td>
+          <td><span class="source-quote">"Hence Zakah means purifying dues." (Page 21)</span></td>
+          <td style="text-align: center; font-weight: 700;">1 Mark</td>
+        </tr>
+        <tr>
+          <td><strong>8</strong></td>
+          <td><span class="ans-badge">Because wealth is something they love dearly</span></td>
+          <td><span class="source-quote">"He commands them to give up some of their wealth, which they love dearly." (Page 21)</span></td>
+          <td style="text-align: center; font-weight: 700;">1 Mark</td>
+        </tr>
+        <tr>
+          <td><strong>9</strong></td>
+          <td><span class="ans-badge">Brotherhood and unity</span></td>
+          <td><span class="source-quote">"It makes stronger ties of brotherhood between the rich and the poor." (Page 22)</span></td>
+          <td style="text-align: center; font-weight: 700;">1 Mark</td>
+        </tr>
+        <tr>
+          <td><strong>10</strong></td>
+          <td><span class="ans-badge">Al-Bukhaaree</span></td>
+          <td><span class="source-quote">Hadith of the hairless snake explicitly credited to (Al-Bukhaaree). (Page 22)</span></td>
+          <td style="text-align: center; font-weight: 700;">1 Mark</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Section C -->
+    <div class="section-title">
+      <span>SECTION C: Interactive Matching Activity (5 Pairs × 1 Mark = 5 Marks)</span>
+      <span style="font-size: 12px; color: #64748b;">5 Marks</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 45px;">#</th>
+          <th style="width: 220px;">Lesson Concept</th>
+          <th style="width: 250px;">Matching Answer</th>
+          <th>Learning Objective</th>
+          <th style="width: 70px; text-align: center;">Mark</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>11</strong></td>
+          <td>Third Pillar of Islam</td>
+          <td><span class="ans-badge">Zakah (The Purifying Dues)</span></td>
+          <td>Identification of pillars of Islam</td>
+          <td style="text-align: center; font-weight: 700;">1 Mark</td>
+        </tr>
+        <tr>
+          <td><strong>12</strong></td>
+          <td>Root meaning of Zakah</td>
+          <td><span class="ans-badge">Purification and growth</span></td>
+          <td>Linguistic understanding</td>
+          <td style="text-align: center; font-weight: 700;">1 Mark</td>
+        </tr>
+        <tr>
+          <td><strong>13</strong></td>
+          <td>Who receives Zakah?</td>
+          <td><span class="ans-badge">Those who are poor or in need</span></td>
+          <td>Beneficiaries of charity</td>
+          <td style="text-align: center; font-weight: 700;">1 Mark</td>
+        </tr>
+        <tr>
+          <td><strong>14</strong></td>
+          <td>Surah 73:20 commands</td>
+          <td><span class="ans-badge">"Offer prayer and give zakah"</span></td>
+          <td>Quranic textual proof</td>
+          <td style="text-align: center; font-weight: 700;">1 Mark</td>
+        </tr>
+        <tr>
+          <td><strong>15</strong></td>
+          <td>Zakah teaches us</td>
+          <td><span class="ans-badge">Do not be selfish with Allah's gifts</span></td>
+          <td>Moral & ethical reflection</td>
+          <td style="text-align: center; font-weight: 700;">1 Mark</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Section D -->
+    <div class="section-title">
+      <span>SECTION D: Fill in the Missing Word (5 Questions × 1 Mark = 5 Marks)</span>
+      <span style="font-size: 12px; color: #64748b;">5 Marks</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 45px;">Q#</th>
+          <th style="width: 220px;">Missing Word (Word Bank)</th>
+          <th>Completed Sentence & Textbook Citation</th>
+          <th style="width: 70px; text-align: center;">Mark</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>16</strong></td>
+          <td><span class="ans-badge">purifying</span></td>
+          <td>"Hence Zakah means the <strong>purifying</strong> dues." (Page 21)</td>
+          <td style="text-align: center; font-weight: 700;">1 Mark</td>
+        </tr>
+        <tr>
+          <td><strong>17</strong></td>
+          <td><span class="ans-badge">prayer</span></td>
+          <td>"The Qur'an mentions Zakah immediately after the <strong>prayer</strong> (Salah)." (Page 21)</td>
+          <td style="text-align: center; font-weight: 700;">1 Mark</td>
+        </tr>
+        <tr>
+          <td><strong>18</strong></td>
+          <td><span class="ans-badge">selfish</span></td>
+          <td>"Zakah reminds the giver that he must not be <strong>selfish</strong> with what Allah gave him." (Page 21)</td>
+          <td style="text-align: center; font-weight: 700;">1 Mark</td>
+        </tr>
+        <tr>
+          <td><strong>19</strong></td>
+          <td><span class="ans-badge">brotherhood</span></td>
+          <td>"Zakah builds stronger ties of <strong>brotherhood</strong> between the rich and the poor." (Page 22)</td>
+          <td style="text-align: center; font-weight: 700;">1 Mark</td>
+        </tr>
+        <tr>
+          <td><strong>20</strong></td>
+          <td><span class="ans-badge">Al-Bukhaaree</span></td>
+          <td>"The warning about neglecting Zakah is reported in the Hadith of <strong>Al-Bukhaaree</strong>." (Page 22)</td>
+          <td style="text-align: center; font-weight: 700;">1 Mark</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top: 24px; padding-top: 14px; border-top: 1.5px dashed #cbd5e1; display: flex; justify-content: space-between; font-size: 12px; color: #64748b;">
+      <span><strong>Grade 3 Zakat Quiz Rubric:</strong> Sec A (5) + Sec B (5) + Sec C (5) + Sec D (5) = 20 Marks Total</span>
+      <span class="footer-dua" style="font-family: 'Amiri', serif; font-size: 16px; color: var(--primary-emerald);">جَزَاكُمُ اللَّهُ خَيْرًا</span>
+      <span>Official Teacher Resource Copy</span>
+    </div>
+  </div>
+</body>
+</html>
