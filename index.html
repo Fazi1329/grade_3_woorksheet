@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Islamic Studies Worksheet - Zakat (20 Marks)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-emerald: #0b663b;
+      --primary-dark: #074326;
+      --accent-gold: #c59b27;
+      --gold-light: #fef9e7;
+      --gold-border: #dfc168;
+      --navy: #152d4a;
+      --bg-cream: #faf9f5;
+      --card-bg: #ffffff;
+      --text-main: #1f2937;
+      --text-muted: #4b5563;
+      --border-soft: #e5e7eb;
+      --tag-bg: #e8f5e9;
+      --tag-text: #0e623b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f1f3f5;
+      color: var(--text-main);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Interactive Top Action Bar (hidden on print) */
+    .no-print-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: linear-gradient(135deg, #074326, #152d4a);
+      color: white;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .toolbar-title {
+      font-weight: 700;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .toolbar-title span {
+      background: var(--accent-gold);
+      color: #000;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #e5b93b, #c59b27);
+      color: #112316;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .btn-gold:hover {
+      background: linear-gradient(135deg, #f0c54a, #d4af37);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: rgba(255,255,255,0.12);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.22);
+    }
+
+    /* Page Canvas */
+    .sheet-wrapper {
+      max-width: 860px;
+      margin: 28px auto;
+      padding: 0 16px;
+    }
+
+    /* A4 Page Container */
+    .a4-page {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 28px 36px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.07);
+      margin-bottom: 30px;
+      position: relative;
+      border: 1px solid #e2e8f0;
+      page-break-after: always;
+    }
+
+    /* Islamic Geometric Border Ornament */
+    .islamic-header-border {
+      height: 6px;
+      background: repeating-linear-gradient(
+        45deg,
+        var(--accent-gold),
+        var(--accent-gold) 10px,
+        var(--primary-emerald) 10px,
+        var(--primary-emerald) 20px,
+        var(--navy) 20px,
+        var(--navy) 30px
+      );
+      border-radius: 4px;
+      margin-bottom: 18px;
+    }
+
+    /* Header Section */
+    .worksheet-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 14px;
+      border-bottom: 2px double var(--gold-border);
+      margin-bottom: 18px;
+    }
+
+    .header-left {
+      flex: 1;
+    }
+
+    .bismillah-text {
+      font-family: 'Amiri', serif;
+      font-size: 20px;
+      color: var(--primary-emerald);
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .school-subject {
+      font-family: 'Cinzel', serif;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: var(--navy);
+      text-transform: uppercase;
+    }
+
+    .topic-sub {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--primary-emerald);
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .topic-badge {
+      background: var(--gold-light);
+      color: #8c6d12;
+      border: 1px solid var(--gold-border);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 12px;
+      text-transform: uppercase;
+    }
+
+    .arabic-topic {
+      font-family: 'Amiri', serif;
+      font-size: 24px;
+      color: var(--accent-gold);
+      margin-left: 6px;
+    }
+
+    .header-right {
+      text-align: right;
+    }
+
+    .marks-badge-total {
+      background: linear-gradient(135deg, var(--primary-emerald), var(--primary-dark));
+      color: white;
+      padding: 8px 16px;
+      border-radius: 10px;
+      border: 2px solid var(--accent-gold);
+      box-shadow: 0 4px 10px rgba(11, 102, 59, 0.25);
+    }
+
+    .marks-badge-total .num {
+      font-family: 'Cinzel', serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: #ffde70;
+      display: block;
+      line-height: 1;
+    }
+
+    .marks-badge-total .lbl {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    /* Student Info Box */
+    .student-info-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 12px;
+      background: #fdfbf7;
+      border: 1px solid #ebd9a8;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .info-field {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .info-label {
+      font-weight: 700;
+      font-size: 12px;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    .info-line {
+      border-bottom: 1.5px dotted #9ca3af;
+      flex: 1;
+      height: 18px;
+    }
+
+    /* Section Banner */
+    .section-banner {
+      background: linear-gradient(90deg, #f4fbf7, #ffffff);
+      border-left: 5px solid var(--primary-emerald);
+      border-top: 1px solid #d1fae5;
+      border-right: 1px solid #d1fae5;
+      border-bottom: 1px solid #d1fae5;
+      padding: 10px 16px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-letter-pill {
+      background: var(--primary-emerald);
+      color: white;
+      font-weight: 800;
+      font-size: 13px;
+      padding: 3px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .section-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .section-marks {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary-emerald);
+      background: var(--tag-bg);
+      padding: 3px 10px;
+      border-radius: 12px;
+      border: 1px solid #bbf7d0;
+    }
+
+    .instructions-box {
+      font-size: 12.5px;
+      font-style: italic;
+      color: #374151;
+      background: #f8fafc;
+      padding: 6px 14px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+      border-left: 3px solid var(--accent-gold);
+    }
+
+    /* Question Item */
+    .question-list {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .q-item {
+      background: #ffffff;
+      border: 1px solid #f0f2f5;
+      border-radius: 8px;
+      padding: 9px 12px 9px 14px;
+      transition: border-color 0.15s;
+    }
+
+    .q-item:hover {
+      border-color: #cbd5e1;
+    }
+
+    .q-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+
+    .q-text {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.45;
+    }
+
+    .q-num {
+      color: var(--primary-emerald);
+      font-weight: 800;
+      margin-right: 4px;
+    }
+
+    .q-mark {
+      font-size: 11px;
+      font-weight: 700;
+      color: #b45309;
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      padding: 1px 7px;
+      border-radius: 4px;
+      white-space: nowrap;
+      margin-left: 10px;
+    }
+
+    /* Options Styling for Section A (Underline) */
+    .underline-options-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      padding-top: 2px;
+    }
+
+    .option-underline-pill {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 5px 8px;
+      font-size: 12px;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .option-underline-pill .letter {
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    /* Options Styling for Section B (Choose/Circle) */
+    .choose-options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px 12px;
+      padding-top: 3px;
+    }
+
+    .option-bubble-item {
+      background: #fbfcfe;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 12px;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bubble-letter {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1.5px solid #94a3b8;
+      font-weight: 700;
+      font-size: 11px;
+      color: var(--navy);
+      background: white;
+      flex-shrink: 0;
+    }
+
+    .option-text {
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    /* Footer / Pagination */
+    .page-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 18px;
+      padding-top: 10px;
+      border-top: 1px dashed #e2e8f0;
+      font-size: 11px;
+      color: #64748b;
+    }
+
+    .footer-dua {
+      font-family: 'Amiri', serif;
+      font-size: 13px;
+      color: var(--primary-emerald);
+    }
+
+    /* Teacher Key Section Styling */
+    .teacher-badge-header {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: white;
+      padding: 16px 20px;
+      border-radius: 8px;
+      border-left: 6px solid var(--accent-gold);
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .key-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    .key-table th {
+      background: #0f4c2e;
+      color: white;
+      text-align: left;
+      padding: 8px 10px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .key-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #e2e8f0;
+      vertical-align: middle;
+    }
+
+    .key-table tr:nth-child(even) td {
+      background-color: #f8fafc;
+    }
+
+    .correct-ans {
+      font-weight: 700;
+      color: #0b663b;
+      background: #eafaf1;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      border: 1px solid #b7ebd0;
+    }
+
+    .source-ref {
+      font-size: 11px;
+      color: #475569;
+      font-style: italic;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background-color: #ffffff;
+      }
+
+      .no-print-toolbar {
+        display: none !important;
+      }
+
+      .sheet-wrapper {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .a4-page {
+        box-shadow: none;
+        border: none;
+        padding: 16mm 14mm 14mm 14mm;
+        margin: 0;
+        border-radius: 0;
+        page-break-after: always;
+        height: auto;
+      }
+
+      .hide-in-student-print {
+        display: none !important;
+      }
+
+      /* Force background colors in print */
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Bar for Teachers / Students -->
+  <div class="no-print-toolbar">
+    <div class="toolbar-title">
+      <span>G3</span> Islamic Studies – 20-Mark Zakat Worksheet
+    </div>
+    <div class="toolbar-actions">
+      <button class="btn btn-gold" onclick="window.print()">
+        🖨️ Print Worksheet (A4)
+      </button>
+      <button class="btn btn-outline" id="toggleTeacherKeyBtn" onclick="toggleTeacherKey()">
+        👁️ Toggle Teacher Answer Key
+      </button>
+      <a class="btn btn-outline" href="teacher_answer_key.html" style="text-decoration: none;">
+        📋 Answer Key Page
+      </a>
+    </div>
+  </div>
+
+  <div class="sheet-wrapper">
+
+    <!-- ==================== PAGE 1: STUDENT SHEET (SECTION A) ==================== -->
+    <div class="a4-page" id="studentPage1">
+      <div class="islamic-header-border"></div>
+
+      <div class="worksheet-header">
+        <div class="header-left">
+          <div class="bismillah-text">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+          <h1 class="school-subject">ISLAMIC STUDIES – WORKSHEET</h1>
+          <div class="topic-sub">
+            Topic: Zakat (Chapter 5: The Purifying Dues)
+            <span class="arabic-topic">الزَّكَاة</span>
+            <span class="topic-badge">Grade 3</span>
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="marks-badge-total">
+            <span class="num">20</span>
+            <span class="lbl">Total Marks</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Student Credentials Box -->
+      <div class="student-info-grid">
+        <div class="info-field">
+          <span class="info-label">Student's Name:</span>
+          <div class="info-line"></div>
+        </div>
+        <div class="info-field">
+          <span class="info-label">Grade/Class:</span>
+          <div class="info-line"></div>
+        </div>
+        <div class="info-field">
+          <span class="info-label">Date:</span>
+          <div class="info-line"></div>
+        </div>
+      </div>
+
+      <!-- Section A Banner -->
+      <div class="section-banner">
+        <div class="section-title-wrap">
+          <span class="section-letter-pill">SECTION A</span>
+          <h2 class="section-title">Underline the Correct Answer</h2>
+        </div>
+        <span class="section-marks">10 Marks (1 Mark each)</span>
+      </div>
+
+      <div class="instructions-box">
+        <strong>Instructions:</strong> Read each question carefully and <u>underline</u> the correct answer from the choices provided.
+      </div>
+
+      <!-- Section A Questions (1 to 10) -->
+      <div class="question-list">
+
+        <!-- Q1 -->
+        <div class="q-item">
+          <div class="q-header">
+            <div class="q-text"><span class="q-num">1.</span> Zakah is the ________ pillar of Islam.</div>
+            <span class="q-mark">[1 Mark]</span>
+          </div>
+          <div class="underline-options-grid">
+            <div class="option-underline-pill"><span class="letter">a)</span> second</div>
+            <div class="option-underline-pill"><span class="letter">b)</span> third</div>
+            <div class="option-underline-pill"><span class="letter">c)</span> fourth</div>
+            <div class="option-underline-pill"><span class="letter">d)</span> fifth</div>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="q-item">
+          <div class="q-header">
+            <div class="q-text"><span class="q-num">2.</span> In the Holy Qur’an, Zakah is mentioned immediately after:</div>
+            <span class="q-mark">[1 Mark]</span>
+          </div>
+          <div class="underline-options-grid">
+            <div class="option-underline-pill"><span class="letter">a)</span> fasting</div>
+            <div class="option-underline-pill"><span class="letter">b)</span> prayer</div>
+            <div class="option-underline-pill"><span class="letter">c)</span> Hajj</div>
+            <div class="option-underline-pill"><span class="letter">d)</span> honesty</div>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="q-item">
+          <div class="q-header">
+            <div class="q-text"><span class="q-num">3.</span> The word "Zakah" comes from which language?</div>
+            <span class="q-mark">[1 Mark]</span>
+          </div>
+          <div class="underline-options-grid">
+            <div class="option-underline-pill"><span class="letter">a)</span> Urdu</div>
+            <div class="option-underline-pill"><span class="letter">b)</span> Persian</div>
+            <div class="option-underline-pill"><span class="letter">c)</span> Arabic</div>
+            <div class="option-underline-pill"><span class="letter">d)</span> Turkish</div>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="q-item">
+          <div class="q-header">
+            <div class="q-text"><span class="q-num">4.</span> The root meaning of the Arabic word Zakah suggests that it is a means of:</div>
+            <span class="q-mark">[1 Mark]</span>
+          </div>
+          <div class="underline-options-grid">
+            <div class="option-underline-pill"><span class="letter">a)</span> rest and sleep</div>
+            <div class="option-underline-pill"><span class="letter">b)</span> purification and growth</div>
+            <div class="option-underline-pill"><span class="letter">c)</span> buying and selling</div>
+            <div class="option-underline-pill"><span class="letter">d)</span> travelling far</div>
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="q-item">
+          <div class="q-header">
+            <div class="q-text"><span class="q-num">5.</span> In the chapter title and text, Zakah means:</div>
+            <span class="q-mark">[1 Mark]</span>
+          </div>
+          <div class="underline-options-grid">
+            <div class="option-underline-pill"><span class="letter">a)</span> Daily Charity</div>
+            <div class="option-underline-pill"><span class="letter">b)</span> Purifying Dues</div>
+            <div class="option-underline-pill"><span class="letter">c)</span> Optional Gift</div>
+            <div class="option-underline-pill"><span class="letter">d)</span> Golden Treasure</div>
+          </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="q-item">
+          <div class="q-header">
+            <div class="q-text"><span class="q-num">6.</span> Zakah is compulsory upon every Muslim who:</div>
+            <span class="q-mark">[1 Mark]</span>
+          </div>
+          <div class="underline-options-grid">
+            <div class="option-underline-pill"><span class="letter">a)</span> has a certain wealth</div>
+            <div class="option-underline-pill"><span class="letter">b)</span> has no money</div>
+            <div class="option-underline-pill"><span class="letter">c)</span> owns many cars</div>
+            <div class="option-underline-pill"><span class="letter">d)</span> goes to school</div>
+          </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="q-item">
+          <div class="q-header">
+            <div class="q-text"><span class="q-num">7.</span> Zakah is given for the benefit of those who are:</div>
+            <span class="q-mark">[1 Mark]</span>
+          </div>
+          <div class="underline-options-grid">
+            <div class="option-underline-pill"><span class="letter">a)</span> rich and wealthy</div>
+            <div class="option-underline-pill"><span class="letter">b)</span> poor or in need</div>
+            <div class="option-underline-pill"><span class="letter">c)</span> traders only</div>
+            <div class="option-underline-pill"><span class="letter">d)</span> kings and rulers</div>
+          </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="q-item">
+          <div class="q-header">
+            <div class="q-text"><span class="q-num">8.</span> In Surah 73:20, the Qur’an says: "And offer prayer and ______________."</div>
+            <span class="q-mark">[1 Mark]</span>
+          </div>
+          <div class="underline-options-grid">
+            <div class="option-underline-pill"><span class="letter">a)</span> read books</div>
+            <div class="option-underline-pill"><span class="letter">b)</span> give zakah</div>
+            <div class="option-underline-pill"><span class="letter">c)</span> sleep early</div>
+            <div class="option-underline-pill"><span class="letter">d)</span> eat meals</div>
+          </div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="q-item">
+          <div class="q-header">
+            <div class="q-text"><span class="q-num">9.</span> Giving Zakah reminds the person who gives it that he should NOT be:</div>
+            <span class="q-mark">[1 Mark]</span>
+          </div>
+          <div class="underline-options-grid">
+            <div class="option-underline-pill"><span class="letter">a)</span> honest</div>
+            <div class="option-underline-pill"><span class="letter">b)</span> generous</div>
+            <div class="option-underline-pill"><span class="letter">c)</span> selfish</div>
+            <div class="option-underline-pill"><span class="letter">d)</span> kind</div>
+          </div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="q-item">
+          <div class="q-header">
+            <div class="q-text"><span class="q-num">10.</span> Between the rich and the poor, Zakah makes stronger ties of:</div>
+            <span class="q-mark">[1 Mark]</span>
+          </div>
+          <div class="underline-options-grid">
+            <div class="option-underline-pill"><span class="letter">a)</span> brotherhood</div>
+            <div class="option-underline-pill"><span class="letter">b)</span> argument</div>
+            <div class="option-underline-pill"><span class="letter">c)</span> competition</div>
+            <div class="option-underline-pill"><span class="letter">d)</span> distance</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="page-footer">
+        <span>Islamic Studies – Chapter 5: Zakah</span>
+        <span class="footer-dua">رَبِّ زِدْنِي عِلْمًا</span>
+        <span>Page 1 of 2</span>
+      </div>
+    </div>
+
+
+    <!-- ==================== PAGE 2: STUDENT SHEET (SECTION B) ==================== -->
+    <div class="a4-page" id="studentPage2">
+      <div class="islamic-header-border"></div>
+
+      <div class="worksheet-header" style="margin-bottom: 14px; padding-bottom: 10px;">
+        <div class="header-left">
+          <h2 style="font-family: 'Cinzel', serif; font-size: 18px; color: var(--navy);">ISLAMIC STUDIES – WORKSHEET (CONTINUED)</h2>
+          <div class="topic-sub" style="font-size: 13px;">Topic: Zakat – Understanding & Wisdom</div>
+        </div>
+        <div class="header-right">
+          <div style="font-size: 12px; font-weight: 700; color: var(--primary-emerald); background: var(--tag-bg); padding: 4px 12px; border-radius: 6px;">
+            Section B: 10 Marks
+          </div>
+        </div>
+      </div>
+
+      <!-- Section B Banner -->
+      <div class="section-banner">
+        <div class="section-title-wrap">
+          <span class="section-letter-pill" style="background: var(--navy);">SECTION B</span>
+          <h2 class="section-title">Choose the Correct Answer</h2>
+        </div>
+        <span class="section-marks">10 Marks (1 Mark each)</span>
+      </div>
+
+      <div class="instructions-box">
+        <strong>Instructions:</strong> Choose the correct answer for each question by circling the letter (<strong>A</strong>, <strong>B</strong>, <strong>C</strong>, or <strong>D</strong>).
+      </div>
+
+      <!-- Section B Questions (11 to 20) -->
+      <div class="question-list">
+
+        <!-- Q11 -->
+        <div class="q-item">
+          <div class="q-header">
+            <div class="q-text"><span class="q-num">11.</span> Why does Allah put Muslims to the test by commanding them to give Zakah?</div>
+            <span class="q-mark">[1 Mark]</span>
+          </div>
+          <div class="choose-options-grid">
+            <div class="option-bubble-item"><span class="bubble-letter">A</span><span class="option-text">Because wealth is something they love dearly</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">B</span><span class="option-text">Because Allah wants them to have no money</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">C</span><span class="option-text">Because Muslims do not need food or shelter</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">D</span><span class="option-text">Because worldly goods are easy to give up</span></div>
+          </div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="q-item">
+          <div class="q-header">
+            <div class="q-text"><span class="q-num">12.</span> What happens to a person who becomes too attached to worldly goods?</div>
+            <span class="q-mark">[1 Mark]</span>
+          </div>
+          <div class="choose-options-grid">
+            <div class="option-bubble-item"><span class="bubble-letter">A</span><span class="option-text">He stops enjoying good food</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">B</span><span class="option-text">He loves life so much that he hates death</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">C</span><span class="option-text">He gives all his money to charity</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">D</span><span class="option-text">He forgets how to count money</span></div>
+          </div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="q-item">
+          <div class="q-header">
+            <div class="q-text"><span class="q-num">13.</span> What spiritual benefit does Zakah bring to the person who pays it?</div>
+            <span class="q-mark">[1 Mark]</span>
+          </div>
+          <div class="choose-options-grid">
+            <div class="option-bubble-item"><span class="bubble-letter">A</span><span class="option-text">It cleanses and purifies the giver</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">B</span><span class="option-text">It makes the person famous in town</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">C</span><span class="option-text">It excuses him from daily prayers</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">D</span><span class="option-text">It makes him the richest person</span></div>
+          </div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="q-item">
+          <div class="q-header">
+            <div class="q-text"><span class="q-num">14.</span> How does Zakah benefit the community as a whole?</div>
+            <span class="q-mark">[1 Mark]</span>
+          </div>
+          <div class="choose-options-grid">
+            <div class="option-bubble-item"><span class="bubble-letter">A</span><span class="option-text">It separates the rich people from others</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">B</span><span class="option-text">It benefits the whole society by building unity</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">C</span><span class="option-text">It forces all poor people to work for free</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">D</span><span class="option-text">It stops people from doing business</span></div>
+          </div>
+        </div>
+
+        <!-- Q15 -->
+        <div class="q-item">
+          <div class="q-header">
+            <div class="q-text"><span class="q-num">15.</span> According to the Hadith, what will neglected wealth turn into on the Day of Judgement?</div>
+            <span class="q-mark">[1 Mark]</span>
+          </div>
+          <div class="choose-options-grid">
+            <div class="option-bubble-item"><span class="bubble-letter">A</span><span class="option-text">A pool of boiling water</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">B</span><span class="option-text">A hairless snake with two black specks</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">C</span><span class="option-text">Heavy stones falling from above</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">D</span><span class="option-text">A mountain of dry dust</span></div>
+          </div>
+        </div>
+
+        <!-- Q16 -->
+        <div class="q-item">
+          <div class="q-header">
+            <div class="q-text"><span class="q-num">16.</span> In the Hadith, what does the snake do to the person who refused to pay Zakah?</div>
+            <span class="q-mark">[1 Mark]</span>
+          </div>
+          <div class="choose-options-grid">
+            <div class="option-bubble-item"><span class="bubble-letter">A</span><span class="option-text">It gives him back his gold coins</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">B</span><span class="option-text">It chains him and seizes him by his jaw</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">C</span><span class="option-text">It sleeps peacefully beside him</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">D</span><span class="option-text">It runs away into the desert</span></div>
+          </div>
+        </div>
+
+        <!-- Q17 -->
+        <div class="q-item">
+          <div class="q-header">
+            <div class="q-text"><span class="q-num">17.</span> What does the snake say to the person when it seizes him?</div>
+            <span class="q-mark">[1 Mark]</span>
+          </div>
+          <div class="choose-options-grid">
+            <div class="option-bubble-item"><span class="bubble-letter">A</span><span class="option-text">"You are free from all punishment."</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">B</span><span class="option-text">"I'm your wealth, I'm your treasure."</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">C</span><span class="option-text">"Give me food and drink today."</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">D</span><span class="option-text">"I will protect you from harm."</span></div>
+          </div>
+        </div>
+
+        <!-- Q18 -->
+        <div class="q-item">
+          <div class="q-header">
+            <div class="q-text"><span class="q-num">18.</span> Which famous Hadith book is this warning about Zakah mentioned in?</div>
+            <span class="q-mark">[1 Mark]</span>
+          </div>
+          <div class="choose-options-grid">
+            <div class="option-bubble-item"><span class="bubble-letter">A</span><span class="option-text">Al-Bukhaaree</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">B</span><span class="option-text">Sunan Abu Dawood</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">C</span><span class="option-text">Muwatta Malik</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">D</span><span class="option-text">Sunan Ibn Majah</span></div>
+          </div>
+        </div>
+
+        <!-- Q19 -->
+        <div class="q-item">
+          <div class="q-header">
+            <div class="q-text"><span class="q-num">19.</span> According to the text, who receives the benefit of Zakah?</div>
+            <span class="q-mark">[1 Mark]</span>
+          </div>
+          <div class="choose-options-grid">
+            <div class="option-bubble-item"><span class="bubble-letter">A</span><span class="option-text">Only merchants who own shops</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">B</span><span class="option-text">Those who are poor or in need</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">C</span><span class="option-text">Only leaders and governors</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">D</span><span class="option-text">People who have lots of gold</span></div>
+          </div>
+        </div>
+
+        <!-- Q20 -->
+        <div class="q-item">
+          <div class="q-header">
+            <div class="q-text"><span class="q-num">20.</span> What is the main moral teaching regarding wealth given by Allah?</div>
+            <span class="q-mark">[1 Mark]</span>
+          </div>
+          <div class="choose-options-grid">
+            <div class="option-bubble-item"><span class="bubble-letter">A</span><span class="option-text">Never share anything with anyone</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">B</span><span class="option-text">Do not be selfish with what Allah gives us</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">C</span><span class="option-text">Spend all your money on toys only</span></div>
+            <div class="option-bubble-item"><span class="bubble-letter">D</span><span class="option-text">Hide your money away from everyone</span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="page-footer">
+        <span>Student Score: ______ / 20 Marks</span>
+        <span class="footer-dua">الحمد لله رب العالمين</span>
+        <span>Page 2 of 2 (End of Student Worksheet)</span>
+      </div>
+    </div>
+
+
+    <!-- ==================== PAGE 3: TEACHER'S ANSWER KEY ==================== -->
+    <div class="a4-page" id="teacherKeyPage">
+      <div class="islamic-header-border"></div>
+
+      <div class="teacher-badge-header">
+        <div>
+          <h2 style="font-family: 'Cinzel', serif; font-size: 19px; color: #ffde70; letter-spacing: 1px;">TEACHER'S ANSWER KEY & MARKING GUIDE</h2>
+          <p style="font-size: 13px; color: #cbd5e1; margin-top: 4px;">Islamic Studies – Chapter 5: Zakah (The Purifying Dues) | Total: 20 Marks</p>
+        </div>
+        <div style="text-align: right; background: rgba(255,255,255,0.1); padding: 8px 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2);">
+          <div style="font-size: 11px; text-transform: uppercase; color: #94a3b8;">Max Score</div>
+          <div style="font-family: 'Cinzel', serif; font-size: 20px; font-weight: 800; color: #ffffff;">20 / 20</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 14px; color: var(--primary-emerald); margin-bottom: 8px; font-weight: 700; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 4px;">
+        SECTION A: Underline the Correct Answer (10 Marks)
+      </h3>
+      <table class="key-table">
+        <thead>
+          <tr>
+            <th style="width: 45px;">Q#</th>
+            <th style="width: 250px;">Correct Answer</th>
+            <th>Lesson Reference & Verified Text</th>
+            <th style="width: 70px; text-align: center;">Mark</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1</strong></td>
+            <td><span class="correct-ans">b) third</span></td>
+            <td><span class="source-ref">"Zakah is the third pillar of Islam." (Page 21)</span></td>
+            <td style="text-align: center; font-weight: 700;">1 Mark</td>
+          </tr>
+          <tr>
+            <td><strong>2</strong></td>
+            <td><span class="correct-ans">b) prayer</span></td>
+            <td><span class="source-ref">"The Qur'an mentions it immediately after the prayer, saying, 'And offer prayer and give zakah.' (73:20)" (Page 21)</span></td>
+            <td style="text-align: center; font-weight: 700;">1 Mark</td>
+          </tr>
+          <tr>
+            <td><strong>3</strong></td>
+            <td><span class="correct-ans">c) Arabic</span></td>
+            <td><span class="source-ref">"Zakah is an Arabic word." (Page 21)</span></td>
+            <td style="text-align: center; font-weight: 700;">1 Mark</td>
+          </tr>
+          <tr>
+            <td><strong>4</strong></td>
+            <td><span class="correct-ans">b) purification and growth</span></td>
+            <td><span class="source-ref">"The root meaning of the Arabic term suggests that it is a means of purification and growth." (Page 21)</span></td>
+            <td style="text-align: center; font-weight: 700;">1 Mark</td>
+          </tr>
+          <tr>
+            <td><strong>5</strong></td>
+            <td><span class="correct-ans">b) Purifying Dues</span></td>
+            <td><span class="source-ref">"Hence Zakah means purifying dues." (Page 21 title & text)</span></td>
+            <td style="text-align: center; font-weight: 700;">1 Mark</td>
+          </tr>
+          <tr>
+            <td><strong>6</strong></td>
+            <td><span class="correct-ans">a) has a certain wealth</span></td>
+            <td><span class="source-ref">"...must be paid by every Muslim who possesses a certain amount of wealth." (Page 21)</span></td>
+            <td style="text-align: center; font-weight: 700;">1 Mark</td>
+          </tr>
+          <tr>
+            <td><strong>7</strong></td>
+            <td><span class="correct-ans">b) poor or in need</span></td>
+            <td><span class="source-ref">"...and is for the benefit of those who are poor or in need." (Page 21)</span></td>
+            <td style="text-align: center; font-weight: 700;">1 Mark</td>
+          </tr>
+          <tr>
+            <td><strong>8</strong></td>
+            <td><span class="correct-ans">b) give zakah</span></td>
+            <td><span class="source-ref">"'And offer prayer and give zakah.' (73:20)" (Page 21)</span></td>
+            <td style="text-align: center; font-weight: 700;">1 Mark</td>
+          </tr>
+          <tr>
+            <td><strong>9</strong></td>
+            <td><span class="correct-ans">c) selfish</span></td>
+            <td><span class="source-ref">"It makes the person who gives it aware that he should not be selfish with what Allah has given him." (Page 21)</span></td>
+            <td style="text-align: center; font-weight: 700;">1 Mark</td>
+          </tr>
+          <tr>
+            <td><strong>10</strong></td>
+            <td><span class="correct-ans">a) brotherhood</span></td>
+            <td><span class="source-ref">"It makes stronger ties of brotherhood between the rich and the poor." (Page 22)</span></td>
+            <td style="text-align: center; font-weight: 700;">1 Mark</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="font-size: 14px; color: var(--navy); margin-top: 18px; margin-bottom: 8px; font-weight: 700; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 4px;">
+        SECTION B: Choose the Correct Answer (10 Marks)
+      </h3>
+      <table class="key-table">
+        <thead>
+          <tr>
+            <th style="width: 45px;">Q#</th>
+            <th style="width: 250px;">Correct Answer</th>
+            <th>Lesson Reference & Verified Text</th>
+            <th style="width: 70px; text-align: center;">Mark</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>11</strong></td>
+            <td><span class="correct-ans">A) Because wealth is something they love dearly</span></td>
+            <td><span class="source-ref">"Allah, therefore, puts Muslims to the test. He commands them to give up some of their wealth, which they love dearly." (Page 21)</span></td>
+            <td style="text-align: center; font-weight: 700;">1 Mark</td>
+          </tr>
+          <tr>
+            <td><strong>12</strong></td>
+            <td><span class="correct-ans">B) He loves life so much that he hates death</span></td>
+            <td><span class="source-ref">"Because of these worldly goods, a person becomes so attached to life that he hates death." (Page 21)</span></td>
+            <td style="text-align: center; font-weight: 700;">1 Mark</td>
+          </tr>
+          <tr>
+            <td><strong>13</strong></td>
+            <td><span class="correct-ans">A) It cleanses and purifies the giver</span></td>
+            <td><span class="source-ref">"It also cleanses and purifies the giver." (Page 21)</span></td>
+            <td style="text-align: center; font-weight: 700;">1 Mark</td>
+          </tr>
+          <tr>
+            <td><strong>14</strong></td>
+            <td><span class="correct-ans">B) It benefits the whole society by building unity</span></td>
+            <td><span class="source-ref">"Zakah also benefits the whole society. It makes stronger ties of brotherhood..." (Page 22)</span></td>
+            <td style="text-align: center; font-weight: 700;">1 Mark</td>
+          </tr>
+          <tr>
+            <td><strong>15</strong></td>
+            <td><span class="correct-ans">B) A hairless snake with two black specks</span></td>
+            <td><span class="source-ref">"...it is made to appear to him as a hairless snake with two black specks..." (Hadith, Page 22)</span></td>
+            <td style="text-align: center; font-weight: 700;">1 Mark</td>
+          </tr>
+          <tr>
+            <td><strong>16</strong></td>
+            <td><span class="correct-ans">B) It chains him and seizes him by his jaw</span></td>
+            <td><span class="source-ref">"...which chains him, and then seizes him by his jaw..." (Hadith, Page 22)</span></td>
+            <td style="text-align: center; font-weight: 700;">1 Mark</td>
+          </tr>
+          <tr>
+            <td><strong>17</strong></td>
+            <td><span class="correct-ans">B) "I'm your wealth, I'm your treasure."</span></td>
+            <td><span class="source-ref">"...and says, 'I'm your wealth, I'm your treasure.'" (Hadith, Page 22)</span></td>
+            <td style="text-align: center; font-weight: 700;">1 Mark</td>
+          </tr>
+          <tr>
+            <td><strong>18</strong></td>
+            <td><span class="correct-ans">A) Al-Bukhaaree</span></td>
+            <td><span class="source-ref">Explicitly credited at the end of the Hadith: "(Al-Bukhaaree)" (Page 22)</span></td>
+            <td style="text-align: center; font-weight: 700;">1 Mark</td>
+          </tr>
+          <tr>
+            <td><strong>19</strong></td>
+            <td><span class="correct-ans">B) Those who are poor or in need</span></td>
+            <td><span class="source-ref">"...and is for the benefit of those who are poor or in need." (Page 21)</span></td>
+            <td style="text-align: center; font-weight: 700;">1 Mark</td>
+          </tr>
+          <tr>
+            <td><strong>20</strong></td>
+            <td><span class="correct-ans">B) Do not be selfish with what Allah gives us</span></td>
+            <td><span class="source-ref">"It makes the person who gives it aware that he should not be selfish with what Allah has given him." (Page 21)</span></td>
+            <td style="text-align: center; font-weight: 700;">1 Mark</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="page-footer" style="margin-top: 14px;">
+        <span><strong>Marking Summary:</strong> Section A (10) + Section B (10) = 20 Marks</span>
+        <span class="footer-dua">جَزَاكُمُ اللَّهُ خَيْرًا</span>
+        <span>Teacher Reference Copy</span>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleTeacherKey() {
+      const keyPage = document.getElementById('teacherKeyPage');
+      const btn = document.getElementById('toggleTeacherKeyBtn');
+      if (keyPage.style.display === 'none') {
+        keyPage.style.display = 'block';
+        keyPage.classList.remove('hide-in-student-print');
+        btn.innerHTML = '👁️ Hide Teacher Answer Key';
+      } else {
+        keyPage.style.display = 'none';
+        keyPage.classList.add('hide-in-student-print');
+        btn.innerHTML = '👁️ Show Teacher Answer Key';
+      }
+    }
+  </script>
+</body>
+</html>
